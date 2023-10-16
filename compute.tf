@@ -33,29 +33,3 @@ resource "aws_instance" "seljenkins-server" {
         Name = "testserver-1"
     }
 }
-
-
-resource "aws_instance" "seljenkins-server2" {
-    ami           = data.aws_ami.ec2_instance.id
-    instance_type = "t2.micro"
-    subnet_id     = aws_subnet.seljenkins-pubsub.id
-    key_name      = aws_key_pair.seljenkins-key.key_name
-    security_groups = [aws_security_group.seljenkins-sg.id]
-
-    tags = {
-        Name = "testserver-2"
-    }
-}
-
-
-resource "aws_instance" "seljenkins-server3" {
-    ami           = data.aws_ami.ec2_instance.id
-    instance_type = "t2.micro"
-    subnet_id     = aws_subnet.seljenkins-pubsub.id
-    key_name      = aws_key_pair.seljenkins-key.key_name
-    security_groups = [aws_security_group.seljenkins-sg.id]
-
-    tags = {
-        Name = "testserver-3"
-    }
-}
