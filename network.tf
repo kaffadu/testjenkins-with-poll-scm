@@ -12,7 +12,7 @@ resource "aws_vpc" "seljenkins-vpc" {
 
 resource "aws_subnet" "seljenkins-pubsub" {
     vpc_id = aws_vpc.seljenkins-vpc.id
-    cidr_block = "10.0.11.0/24"
+    cidr_block = "10.0.12.0/24"
     map_public_ip_on_launch = true
 
     tags = {
