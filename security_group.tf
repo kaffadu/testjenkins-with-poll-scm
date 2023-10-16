@@ -17,6 +17,13 @@ resource "aws_security_group" "seljenkins-sg" {
     cidr_blocks = ["0.0.0.0/0"] # Open http access 
     }
 
+    ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Open https access 
+    }
+
 
     egress {
     from_port   = 0
